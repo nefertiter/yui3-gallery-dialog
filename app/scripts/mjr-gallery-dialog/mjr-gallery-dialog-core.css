@@ -5,6 +5,9 @@
 .yui3-mjr-gallery-dialog-focused{
 	display: block;
 }
+.yui3-mjr-gallery-dialog-content{
+	margin: 0 auto;
+}
 .yui3-mjr-gallery-dialog .yui3-widget-hd,
 .yui3-mjr-gallery-dialog .yui3-widget-ft{
 	overflow: hidden;
