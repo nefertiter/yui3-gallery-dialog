@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <script src="http://yui.yahooapis.com/3.8.0/build/yui/yui-min.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.8.0/build/cssreset/cssreset-min.css">
+        <script>
+        YUI.GlobalConfig = {
+
+            skin:{
+                base:'assets/skins/',
+                overrides:{
+                    'mjr-gallery-dialog':['mjr']    
+                }
+                
+            },
+            modules: {
+                'mjr-gallery-dialog': {
+                 fullpath: 'scripts/mjr-gallery-dialog/mjr-gallery-dialog.js',
+                 requires:['panel']   
+                }
+            }
+        }
+        // Create a YUI sandbox on your page.
+        YUI().use('panel','mjr-gallery-dialog', function (Y) {
+            // The Node and Event modules are loaded and ready to use.
+            // Your code goes here!
+            var panel = new Y.MJR.GALLERY.Dialog({
+            srcNode : '#yui-panel-example'
+            });
+
+            Y.one('#dialog').on('click',function(){
+                panel.set('visible',true);
+            });
+            
+        });
+        </script>
+        
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="scripts/mjr-gallery-dialog/mjr-gallery-dialog-core.css">
+        <link rel="stylesheet" href="scripts/mjr-gallery-dialog/assets/skins/mjr/mjr-gallery-dialog-skin.css">
+        <script src="scripts/vendor/modernizr.min.js"></script>
+        <style type="text/css">
+        
+        .container{
+            padding: 40px;
+        }
+        </style>
+    </head>
+    <body>
+    <div class="container">
+        <button class="yui3-button" id="dialog">Open Dialog</button>
+        
+    </div>
+
+    <div id="yui-panel-example">
+        <div class="yui3-widget-hd">
+            <h1>User information 1</h1>
+            <span class="yui3-widget-buttons">
+                <button type="button" role="button" class="yui3-button wf2-tertiary-button yui3-button-close">Cancel</button>
+                <button type="button" role="button" class="yui3-button yui3-button-save" data-msg="Your changes on User Information 1 has been saved">Save</button>
+            </span>
+        </div>
+        <div class="yui3-widget-bd">
+            <div >
+                <h1>Lorem ipsum dolor sit amet</h1> 
+                consectetur
+                adipiscing elit. Sed vitae ligula erat, sed sodales enim. Duis ac velit non
+                nibh tristique sollicitudin. Suspendisse vitae est venenatis quam scelerisque
+                ornare. Ut dapibus, magna nec euismod scelerisque, justo velit ullamcorper sem,
+                sit amet viverra arcu nisi eu ipsum.Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Sed vitae ligula erat, sed sodales enim. Duis ac velit non
+                nibh tristique sollicitudin. Suspendisse vitae est venenatis quam scelerisque
+                ornare. Ut dapibus, magna nec euismod scelerisque, justo velit ullamcorper sem,
+                sit amet viverra arcu nisi eu ipsum.Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Sed vitae ligula erat, sed sodales enim. Duis ac velit non
+                nibh tristique sollicitudin. Suspendisse vitae est venenatis quam scelerisque
+                ornare. Ut dapibus, magna nec euismod scelerisque, justo velit ullamcorper sem,
+                sit amet viverra arcu nisi eu ipsum.Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Sed vitae ligula erat, sed sodales enim. Duis ac velit non
+                nibh tristique sollicitudin. Suspendisse vitae est venenatis quam scelerisque
+                ornare. Ut dapibus, magna nec euismod scelerisque, justo velit ullamcorper sem,
+                sit amet viverra arcu nisi eu ipsum.
+            </div>
+        </div>
+        <div class="yui3-widget-ft">
+            <span class="yui3-widget-buttons">
+                <button type="button" role="button" class="yui3-button yui3-button-save" data-msg="Your changes on User Information 1 has been saved">Save</button>
+                <button type="button" role="button" class="yui3-button yui3-button-close wf2-tertiary-button" >Cancel</button>
+            </span>
+        </div>
+    </div>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+
+        
+        
+
+    </body>
+</html>

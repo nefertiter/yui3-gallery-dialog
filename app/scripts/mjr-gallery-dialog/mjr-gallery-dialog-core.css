@@ -1,0 +1,18 @@
+.yui3-mjr-gallery-dialog{
+	font-family: 'Helvetica',Arial, Sans-serif;
+	display: none;
+}
+.yui3-mjr-gallery-dialog-focused{
+	display: block;
+}
+.yui3-mjr-gallery-dialog .yui3-widget-hd,
+.yui3-mjr-gallery-dialog .yui3-widget-ft{
+	overflow: hidden;
+	padding: 1em;
+}
+.yui3-mjr-gallery-dialog .yui3-widget-buttons{
+	padding: .5em;
+}
+.yui3-mjr-gallery-dialog .yui3-widget-bd{
+	padding: 1em;
+}
