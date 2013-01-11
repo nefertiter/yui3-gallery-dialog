@@ -30,16 +30,50 @@
                 }
             }
         }
-        // Create a YUI sandbox on your page.
         YUI().use('panel','mjr-gallery-dialog', function (Y) {
-            // The Node and Event modules are loaded and ready to use.
-            // Your code goes here!
+            var buttonsCfg  = {
+                footer: [
+                    {
+                        name  : 'cancel',
+                        label : 'Cancel',
+                        action: 'hide'
+                    },
+
+                    {
+                        name     : 'proceed',
+                        label    : 'Send',
+                        action   : 'hide'
+                    }
+                ],
+                header: [
+                    {
+                        name  : 'cancel',
+                        label : 'Cancel',
+                        action: 'hide'
+                    },
+
+                    {
+                        name     : 'proceed',
+                        label    : 'Send',
+                        action   : 'hide'
+                    }
+                ]
+            };
+
             var panel = new Y.MJR.GALLERY.Dialog({
-            srcNode : '#yui-panel-example'
+            srcNode : '#yui-panel-example',
+            buttons    : buttonsCfg
+            });
+            var panel2 = new Y.MJR.GALLERY.Dialog({
+            srcNode : '#yui-panel-example-2',
+            buttons    : buttonsCfg
             });
 
             Y.one('#dialog').on('click',function(){
                 panel.set('visible',true);
+            });
+            Y.one('#dialog2').on('click',function(){
+                panel2.set('visible',true);
             });
             
         });
@@ -58,11 +92,12 @@
     </head>
     <body>
     <div class="container">
-        <h1>YUI3 - Accesible and Responsive Dialog Panels</h1>
+        <h1>YUI3 - Accesible and Responsive Dialog Panel</h1>
         <p><a href="https://github.com/nefertiter/yui3-gallery-dialog" class="btn btn-info">Github</a><p>
         <div class="well">
             <h3>Responsive</h3>
             <p>Fullscreen on small break point</p>
+            <p>Center on X and Y Axis option</p>
             <h3>Accesible</h3>
             <p>Tab, Roles and Aria Tag binded</p>
             <h3>YUI3</h3>
@@ -70,17 +105,14 @@
             
 
         </div>
-        <button class="btn btn-primary" id="dialog">Open Example Dialog</button>
+        <button class="btn btn-primary" id="dialog">Open Short Dialog</button>
+        <button class="btn btn-warning" id="dialog2">Open Long Dialog</button>
         
     </div>
 
     <div id="yui-panel-example">
         <div class="yui3-widget-hd">
             <h1>Dialog</h1>
-            <span class="yui3-widget-buttons">
-                <button type="button" role="button" class="yui3-button wf2-tertiary-button yui3-button-close">Cancel</button>
-                <button type="button" role="button" class="yui3-button yui3-button-save" data-msg="Your changes on User Information 1 has been saved">Save</button>
-            </span>
         </div>
         <div class="yui3-widget-bd">
             <div >
@@ -104,12 +136,68 @@
                 sit amet viverra arcu nisi eu ipsum.
             </div>
         </div>
-        <div class="yui3-widget-ft">
-            <span class="yui3-widget-buttons">
-                <button type="button" role="button" class="yui3-button yui3-button-save" data-msg="Your changes on User Information 1 has been saved">Save</button>
-                <button type="button" role="button" class="yui3-button yui3-button-close wf2-tertiary-button" >Cancel</button>
-            </span>
+    </div>
+    <div id="yui-panel-example-2">
+        <div class="yui3-widget-hd">
+            <h1>Dialog</h1>
         </div>
+        <div class="yui3-widget-bd">
+            <div >
+                <h1>Dialog Content Title</h1> 
+                <p>consectetur
+                adipiscing elit. Sed vitae ligula erat, sed sodales enim. Duis ac velit non
+                nibh tristique sollicitudin. Suspendisse vitae est venenatis quam scelerisque
+                ornare. Ut dapibus, magna nec euismod scelerisque, justo velit ullamcorper sem,
+                sit amet viverra arcu nisi eu ipsum.Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Sed vitae ligula erat, sed sodales enim. Duis ac velit non
+                nibh tristique sollicitudin. Suspendisse vitae est venenatis quam scelerisque
+                ornare. Ut dapibus, magna nec euismod scelerisque, justo velit ullamcorper sem,
+                sit amet viverra arcu nisi eu ipsum.Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Sed vitae ligula erat, sed sodales enim. Duis ac velit non
+                nibh tristique sollicitudin. Suspendisse vitae est venenatis quam scelerisque
+                ornare. Ut dapibus, magna nec euismod scelerisque, justo velit ullamcorper sem,
+                sit amet viverra arcu nisi eu ipsum.Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Sed vitae ligula erat, sed sodales enim. Duis ac velit non
+                nibh tristique sollicitudin. Suspendisse vitae est venenatis quam scelerisque
+                ornare. Ut dapibus, magna nec euismod scelerisque, justo velit ullamcorper sem,
+                sit amet viverra arcu nisi eu ipsum.<p>
+                <p>consectetur
+                adipiscing elit. Sed vitae ligula erat, sed sodales enim. Duis ac velit non
+                nibh tristique sollicitudin. Suspendisse vitae est venenatis quam scelerisque
+                ornare. Ut dapibus, magna nec euismod scelerisque, justo velit ullamcorper sem,
+                sit amet viverra arcu nisi eu ipsum.Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Sed vitae ligula erat, sed sodales enim. Duis ac velit non
+                nibh tristique sollicitudin. Suspendisse vitae est venenatis quam scelerisque
+                ornare. Ut dapibus, magna nec euismod scelerisque, justo velit ullamcorper sem,
+                sit amet viverra arcu nisi eu ipsum.Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Sed vitae ligula erat, sed sodales enim. Duis ac velit non
+                nibh tristique sollicitudin. Suspendisse vitae est venenatis quam scelerisque
+                ornare. Ut dapibus, magna nec euismod scelerisque, justo velit ullamcorper sem,
+                sit amet viverra arcu nisi eu ipsum.Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Sed vitae ligula erat, sed sodales enim. Duis ac velit non
+                nibh tristique sollicitudin. Suspendisse vitae est venenatis quam scelerisque
+                ornare. Ut dapibus, magna nec euismod scelerisque, justo velit ullamcorper sem,
+                sit amet viverra arcu nisi eu ipsum.<p>
+                <p>consectetur
+                adipiscing elit. Sed vitae ligula erat, sed sodales enim. Duis ac velit non
+                nibh tristique sollicitudin. Suspendisse vitae est venenatis quam scelerisque
+                ornare. Ut dapibus, magna nec euismod scelerisque, justo velit ullamcorper sem,
+                sit amet viverra arcu nisi eu ipsum.Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Sed vitae ligula erat, sed sodales enim. Duis ac velit non
+                nibh tristique sollicitudin. Suspendisse vitae est venenatis quam scelerisque
+                ornare. Ut dapibus, magna nec euismod scelerisque, justo velit ullamcorper sem,
+                sit amet viverra arcu nisi eu ipsum.Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Sed vitae ligula erat, sed sodales enim. Duis ac velit non
+                nibh tristique sollicitudin. Suspendisse vitae est venenatis quam scelerisque
+                ornare. Ut dapibus, magna nec euismod scelerisque, justo velit ullamcorper sem,
+                sit amet viverra arcu nisi eu ipsum.Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Sed vitae ligula erat, sed sodales enim. Duis ac velit non
+                nibh tristique sollicitudin. Suspendisse vitae est venenatis quam scelerisque
+                ornare. Ut dapibus, magna nec euismod scelerisque, justo velit ullamcorper sem,
+                sit amet viverra arcu nisi eu ipsum.<p>
+            </div>
+        </div>
+        
     </div>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
