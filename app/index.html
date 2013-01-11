@@ -12,7 +12,7 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <script src="http://yui.yahooapis.com/3.8.0/build/yui/yui-min.js"></script>
-        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.8.0/build/cssreset/cssreset-min.css">
+        <!-- <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.8.0/build/cssreset/cssreset-min.css"> -->
         <script>
         YUI.GlobalConfig = {
 
@@ -44,7 +44,7 @@
             
         });
         </script>
-        
+        <link rel="stylesheet" href="styles/bootstrap.css">
         <link rel="stylesheet" href="styles/main.css">
         <link rel="stylesheet" href="scripts/mjr-gallery-dialog/mjr-gallery-dialog-core.css">
         <link rel="stylesheet" href="scripts/mjr-gallery-dialog/assets/skins/mjr/mjr-gallery-dialog-skin.css">
@@ -58,13 +58,25 @@
     </head>
     <body>
     <div class="container">
-        <button class="yui3-button" id="dialog">Open Dialog</button>
+        <h1>YUI3 - Accesible and Responsive Dialog Panels</h1>
+        <p><a href="https://github.com/nefertiter/yui3-gallery-dialog" class="btn btn-info">Github</a><p>
+        <div class="well">
+            <h3>Responsive</h3>
+            <p>Fullscreen on small break point</p>
+            <h3>Accesible</h3>
+            <p>Tab, Roles and Aria Tag binded</p>
+            <h3>YUI3</h3>
+            <p>Everything is just a YUI3 Panel Widget Extension</p>
+            
+
+        </div>
+        <button class="btn btn-primary" id="dialog">Open Example Dialog</button>
         
     </div>
 
     <div id="yui-panel-example">
         <div class="yui3-widget-hd">
-            <h1>User information 1</h1>
+            <h1>Dialog</h1>
             <span class="yui3-widget-buttons">
                 <button type="button" role="button" class="yui3-button wf2-tertiary-button yui3-button-close">Cancel</button>
                 <button type="button" role="button" class="yui3-button yui3-button-save" data-msg="Your changes on User Information 1 has been saved">Save</button>
@@ -72,7 +84,7 @@
         </div>
         <div class="yui3-widget-bd">
             <div >
-                <h1>Lorem ipsum dolor sit amet</h1> 
+                <h1>Dialog Content Title</h1> 
                 consectetur
                 adipiscing elit. Sed vitae ligula erat, sed sodales enim. Duis ac velit non
                 nibh tristique sollicitudin. Suspendisse vitae est venenatis quam scelerisque

@@ -10,7 +10,15 @@
 	overflow: hidden;
 	padding: 1em;
 }
-.yui3-mjr-gallery-dialog .yui3-widget-buttons{
+.yui3-mjr-gallery-dialog .yui3-widget-hd h1,
+.yui3-mjr-gallery-dialog .yui3-widget-hd h2,
+.yui3-mjr-gallery-dialog .yui3-widget-hd h3{
+	margin: 0;
+}
+.yui3-mjr-gallery-dialog .yui3-widget-hd .yui3-widget-buttons{
+	padding: 1em;
+}
+.yui3-mjr-gallery-dialog .yui3-widget-ft .yui3-widget-buttons{
 	padding: .5em;
 }
 .yui3-mjr-gallery-dialog .yui3-widget-bd{
