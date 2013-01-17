@@ -9,11 +9,18 @@ var Dialog = Y.Base.create(
             // console.log('initializer');
             self = this;
             
-            Y.on('resize',function(evt){
-                self.fire(Y.namespace('MJR.GALLERY').Dialog.EV_UPDATE_POSITION,self);
-            },null,self);
-            
-            self.on(Y.namespace('MJR.GALLERY').Dialog.EV_UPDATE_POSITION,self.updatePosition);
+            Y.on(
+                'resize' ,
+                function(evt){
+                    // self is known here
+                    self.fire(Y.namespace('MJR.GALLERY').Dialog.EV_UPDATE_POSITION);
+                }
+            );
+            self.on(
+                Y.namespace('MJR.GALLERY').Dialog.EV_UPDATE_POSITION,
+                self.updatePosition,
+                self
+            );
 
         },
         bindUI: function(){
@@ -33,14 +40,13 @@ var Dialog = Y.Base.create(
         },
         updatePosition: function(){
             
-
             var self   = this,
                 center = self.get('center'),
                 panel  = self.get('boundingBox'),
                 wHeight = panel.get('winHeight'),
                 wWidth = panel.get('winWidth');
 
-            // console.log('calling updatePosition for:'+panel.get('id')+'-'+self.get('visible'));
+            console.log('calling updatePosition for:'+panel.get('id')+'-'+self.get('visible'));
 
             if (!self.get('visible')) return;
 
