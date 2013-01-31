@@ -5,38 +5,26 @@ var Dialog = Y.Base.create(
     Y.Panel,             // parent class
     [],     // class extensions
     {
-        initializer: function(){
-            // console.log('initializer');
-            self = this;
-            
-            Y.on(
-                'resize' ,
-                function(evt){
-                    // self is known here
-                    self.fire(Y.namespace('MJR.GALLERY').Dialog.EV_UPDATE_POSITION);
-                }
-            );
-            self.on(
-                Y.namespace('MJR.GALLERY').Dialog.EV_UPDATE_POSITION,
-                self.updatePosition,
-                self
-            );
-
-        },
+        initializer: function(){},
         bindUI: function(){
-            // console.log('bindUI');
             var self = this;
+            
+            Y.on('resize',function(){
+                self.updatePosition();
+            });
+            
             self.on('visibleChange',self._visibleUpdate,self);
             self.after('visibleChange',function(){
                 window.setTimeout(function(){
-                    self.fire(Y.namespace('MJR.GALLERY').Dialog.EV_UPDATE_POSITION);
+                    self.updatePosition();
                 },10);
             });
             self._renderUpdate(null);
             
         },
         syncUI: function(){
-            this.fire(Y.namespace('MJR.GALLERY').Dialog.EV_UPDATE_POSITION);
+            var self = this;
+            self.updatePosition();
         },
         updatePosition: function(){
             
@@ -128,8 +116,7 @@ var Dialog = Y.Base.create(
                 value:600
             }
 
-        },
-        EV_UPDATE_POSITION: 'UPDATE_POSITION'
+        }
     }
 );
 Y.namespace('MJR.GALLERY').Dialog = Dialog;
