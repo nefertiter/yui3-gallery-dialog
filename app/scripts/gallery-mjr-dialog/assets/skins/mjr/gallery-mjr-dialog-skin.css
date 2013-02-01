@@ -1,0 +1,10 @@
+.yui3-gallery-mjr-dialog-mask{
+	background-color: rgba(0,0,0,0.2);
+}
+.yui3-gallery-mjr-dialog{
+	background-color: #fff;
+}
+.yui3-gallery-mjr-dialog .yui3-widget-hd,
+.yui3-gallery-mjr-dialog .yui3-widget-ft{
+background-color: #e5e5e5
+}

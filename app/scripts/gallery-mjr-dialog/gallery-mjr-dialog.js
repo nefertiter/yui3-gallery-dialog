@@ -1,7 +1,7 @@
 
-YUI.add('mjr-gallery-dialog', function(Y){
+YUI.add('gallery-mjr-dialog', function(Y){
 /**
-* The Dialog class is a Panel based extension as an accesible and responsive enhancement for the base one. 
+* The Dialog class is a Panel based extension as an accessible and responsive enhancement for the base one. 
 * and the relevant data points.
 *
 * @module charts
@@ -12,7 +12,7 @@ YUI.add('mjr-gallery-dialog', function(Y){
 */
 
 var Dialog = Y.Base.create(
-    'mjr-gallery-dialog', 
+    'gallery-mjr-dialog', 
     Y.Panel,
     [],
     {
@@ -173,7 +173,7 @@ var Dialog = Y.Base.create(
         }
     }
 );
-Y.namespace('MJR.GALLERY').Dialog = Dialog;
+Y.namespace('GALLERY.MJR').Dialog = Dialog;
 },'0.0.1',{
     require:['base','panel','event']
 });

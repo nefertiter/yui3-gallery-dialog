@@ -2,18 +2,18 @@ YUI.GlobalConfig = {
     skin:{
         base:'assets/skins/',
         overrides:{
-            'mjr-gallery-dialog':['mjr']    
+            'gallery-mjr-dialog':['mjr']    
         }
         
     },
     modules: {
-        'mjr-gallery-dialog': {
-         fullpath: 'scripts/mjr-gallery-dialog/mjr-gallery-dialog.js',
+        'gallery-mjr-dialog': {
+         fullpath: 'scripts/gallery-mjr-dialog/gallery-mjr-dialog.js',
          requires:['panel']   
         }
     }
 }
-YUI().use('panel','mjr-gallery-dialog', function (Y) {
+YUI().use('panel','gallery-mjr-dialog', function (Y) {
     var buttonsCfg  = {
         footer: [
             {
@@ -43,11 +43,11 @@ YUI().use('panel','mjr-gallery-dialog', function (Y) {
         ]
     };
 
-    var panel = new Y.MJR.GALLERY.Dialog({
+    var panel = new Y.GALLERY.MJR.Dialog({
     srcNode : '#yui-panel-example',
     buttons    : buttonsCfg
     });
-    var panel2 = new Y.MJR.GALLERY.Dialog({
+    var panel2 = new Y.GALLERY.MJR.Dialog({
     srcNode : '#yui-panel-example-2',
     buttons    : buttonsCfg
     });

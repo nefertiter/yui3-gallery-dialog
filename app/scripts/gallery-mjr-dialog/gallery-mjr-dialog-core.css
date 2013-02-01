@@ -1,0 +1,46 @@
+.yui3-gallery-mjr-dialog{
+	font-family: 'Helvetica',Arial, Sans-serif;
+	display: none;
+}
+@media all and (max-width: 600px) {
+  
+  .yui3-gallery-mjr-dialog.yui3-panel {
+    height: 100% !important;
+    top: 0 !important;
+    width: 100% !important;
+  }
+  .yui3-gallery-mjr-dialog .yui3-widget-ft{
+  	position: absolute;
+  	bottom: 0;
+  	width: 100%;
+  }
+}
+.yui3-gallery-mjr-dialog-focused{
+	display: block;
+}
+.yui3-gallery-mjr-dialog-content{
+	margin: 0 auto;
+}
+.yui3-gallery-mjr-dialog .yui3-widget-hd,
+.yui3-gallery-mjr-dialog .yui3-widget-ft{
+	overflow: hidden;
+	padding: 1em;
+}
+.yui3-gallery-mjr-dialog .yui3-widget-buttons .yui3-button{
+	margin-right:4px;
+}
+.yui3-gallery-mjr-dialog .yui3-widget-bd{
+	padding: 1em;
+	overflow:auto;
+}
+.yui3-gallery-mjr-dialog .yui3-widget-hd h1,
+.yui3-gallery-mjr-dialog .yui3-widget-hd h2,
+.yui3-gallery-mjr-dialog .yui3-widget-hd h3{
+	margin: 0;
+}
+.yui3-gallery-mjr-dialog .yui3-widget-hd .yui3-widget-buttons{
+	padding: 1em;
+}
+.yui3-gallery-mjr-dialog .yui3-widget-ft .yui3-widget-buttons{
+	padding: .5em;
+}
