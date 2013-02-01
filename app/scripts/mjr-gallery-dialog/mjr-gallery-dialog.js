@@ -1,18 +1,34 @@
+
 YUI.add('mjr-gallery-dialog', function(Y){
+/**
+* The Dialog class is a Panel based extension as an accesible and responsive enhancement for the base one. 
+* and the relevant data points.
+*
+* @module charts
+* @class Dialog
+* @extends Panel
+* @uses Fills
+* @constructor
+*/
 
 var Dialog = Y.Base.create(
-    'mjr-gallery-dialog',    // NAME, used for event prefixes (camelCase by convention)
-    Y.Panel,             // parent class
-    [],     // class extensions
+    'mjr-gallery-dialog', 
+    Y.Panel,
+    [],
     {
-        initializer: function(){},
+        /**
+        * @public
+        *
+        * Widget extended method to bind the protected method with their events for handling Aria Tags, position and Content Overflow
+        *
+        * @method bindUI
+        * @return void
+        */
         bindUI: function(){
             var self = this;
-            
             Y.on('resize',function(){
                 self.updatePosition();
             });
-            
             self.on('visibleChange',self._visibleUpdate,self);
             self.after('visibleChange',function(){
                 window.setTimeout(function(){
@@ -22,10 +38,26 @@ var Dialog = Y.Base.create(
             self._renderUpdate(null);
             
         },
+        /**
+        * @public
+        *
+        * Widget extended method to update the widget position
+        *
+        * @method syncUI
+        * @return void
+        */
         syncUI: function(){
             var self = this;
             self.updatePosition();
         },
+        /**
+        * @public
+        *
+        * Method used to center and update the overflow content if needed, on load and windows resize
+        *
+        * @method updatePosition
+        * @return void
+        */
         updatePosition: function(){
             
             var self   = this,
@@ -33,8 +65,6 @@ var Dialog = Y.Base.create(
                 panel  = self.get('boundingBox'),
                 wHeight = panel.get('winHeight'),
                 wWidth = panel.get('winWidth');
-
-            console.log('calling updatePosition for:'+panel.get('id')+'-'+self.get('visible'));
 
             if (!self.get('visible')) return;
 
@@ -61,6 +91,15 @@ var Dialog = Y.Base.create(
                 }  
             }
         },
+        /**
+        * @protected
+        *
+        * Method used to set the ARIA Tags and focus for the Dialog on opening
+        *
+        * @method _renderUpdate
+        * @param {EventFacade} evt The renderChange event
+        * @return void
+        */
         _renderUpdate: function(evt){
             var self  = this,
                 panel = self.get('boundingBox'),
@@ -75,6 +114,15 @@ var Dialog = Y.Base.create(
                   .setAttribute('aria-describedby',bd)
                   .focus();
         },
+        /**
+        * @protected
+        *
+        * Method used to update the ARIA Tags and control the overflow within the Dialog
+        *
+        * @method _visibleUpdate
+        * @param {EventFacade} evt The visibleChange event
+        * @return void
+        */
         _visibleUpdate: function(evt){
             var self  = this,
                 value = evt.newVal,
@@ -100,6 +148,13 @@ var Dialog = Y.Base.create(
 
     },{
         ATTRS:{
+            /**
+            * If set True, the Dialog window will be keep centered while the browser window resize
+            *
+            * @attribute center
+            * @type Boolean
+            * @default true
+            */
             center:{
                 value: true
             },
@@ -115,7 +170,6 @@ var Dialog = Y.Base.create(
             width:{
                 value:600
             }
-
         }
     }
 );
